@@ -1,4 +1,9 @@
+import os
 import requests
+from dotenv import load_dotenv
+
+#adding and loading .env file
+load_dotenv()
 
 class Chatbot:
     def __init__(self, name, weather_api_key):
@@ -43,7 +48,7 @@ class Chatbot:
             return "Sorry, I can't help you for your request, can't get the weather data."
 
 # API Key
-weather_api_key = "66db1fa643acfbe35e2428f495dfef96"
+weather_api_key = os.getenv("weather_api_key")
 
 # Chatbot nesnesini oluştur
 chatbot = Chatbot("Omnia", weather_api_key)
